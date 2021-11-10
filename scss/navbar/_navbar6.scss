@@ -1,0 +1,138 @@
+header {
+    position: relative;
+    z-index: 99;
+
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.navbar {
+    position: relative;
+    padding: 2rem 0;
+
+    svg {
+        position: absolute;
+        top: 0.3em;
+        left: 6.5%;
+        color: white;
+        @include transition(left);
+    }
+
+    .nav-link {
+        font-weight: 200;
+        font-size: 1.5rem;
+        padding: 1.2rem 2.5rem;
+        color: white;
+        letter-spacing: 0.8px;
+
+        &:first-child:hover~svg {
+            left: 6.5%;
+        }
+
+        &:nth-child(2):hover~svg {
+            left: 21%;
+        }
+
+        &:nth-child(3):hover~svg {
+            left: 35%;
+        }
+
+        &:nth-child(4):hover~svg {
+            left: 48.5%;
+        }
+
+        &:nth-child(5):hover~svg {
+            left: 62.8%;
+        }
+
+        &:nth-child(6):hover~svg {
+            left: 76.8%;
+        }
+
+        &:nth-child(7):hover~svg {
+            left: 91.5%;
+        }
+    }
+}
+
+#bg-shape {
+    position: relative;
+
+    .bg-image {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        transform: rotate(-10deg);
+    }
+}
+
+#carousel {
+    position: relative;
+    margin-top: -10rem;
+    height: 100vh;
+
+    .carousel-wrapper {
+        line-height: 0;
+    }
+}
+
+.carousel-item {
+
+    &:not(:first-child) {
+        display: none;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0.8;
+        width: 100%;
+        height: 100%;
+        background: $color-gradient-secondary;
+    }
+
+    .banner-img {
+        height: 100vh;
+    }
+
+    .slider-top {
+        display: none;
+    }
+}
+
+.carousel-content {
+    position: absolute;
+    top: 35%;
+    left: 8%;
+    width: 35%;
+    z-index: 9;
+    line-height: initial;
+    color: white;
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 300;
+        line-height: 1.3;
+        margin-bottom: 2rem;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    h6 {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin-bottom: 1.8rem;
+    }
+
+    p {
+        color: white;
+    }
+}

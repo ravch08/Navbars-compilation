@@ -1,0 +1,350 @@
+.topbar {
+    background-color: $color-Dark-lt;
+    color: white;
+
+    p,
+    a {
+        color: white;
+        font-size: $fs-topbar;
+    }
+
+    .top-left p {
+        padding: 1rem 1.2rem;
+    }
+
+    .top-left,
+    .top-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .topbar-wrapper {
+        @extend .flexRow-between;
+    }
+
+    .country {
+        display: flex;
+        align-items: center;
+
+        span {
+            padding: 0 0.4rem;
+        }
+    }
+
+    .country-wrapper,
+    .currency {
+        padding: 1rem 1.2rem;
+        @include transition(background-color);
+
+        &:hover {
+            background-color: $color-hover;
+        }
+
+    }
+}
+
+.country-dropdown {
+    display: none;
+    padding: 1.2rem 0;
+    background-color: white;
+
+    li {
+        padding: 0.5rem 2.6rem;
+    }
+
+    .country-links {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.deals {
+    @extend .flexRow-between;
+
+    a {
+        padding: 1rem 1.2rem;
+        @include transition(background-color);
+
+        &:hover {
+            background-color: $color-hover;
+        }
+    }
+}
+
+
+.social-icons {
+
+    a {
+        padding: 1rem .8rem;
+    }
+
+    svg {
+        font-size: 1.6rem;
+
+        &:hover {
+            background-color: transparent !important;
+            color: $color-hover;
+        }
+    }
+
+}
+
+
+
+// Navbar -------------------------------------------------------------------------
+
+.navbar {
+    position: relative;
+    background-color: $color-Dark-high;
+
+    .navbar-wrapper {
+        @extend .flexRow-between;
+    }
+
+    .nav-item {
+        position: unset;
+    }
+
+    .nav-brand {
+        color: white;
+        flex-basis: 18%;
+        font-size: 4rem;
+        font-weight: 800;
+        position: relative;
+        font-family: 'Oswald', sans-serif;
+        @extend .flexRow-center;
+
+        span {
+            position: absolute;
+            top: 0;
+            right: 40%;
+            font-size: 2rem;
+            color: $color-hover;
+        }
+    }
+
+    nav {
+        background-color: #121212;
+        flex-basis: 60%;
+    }
+}
+
+.nav-list {
+    @extend .flexRow-center;
+
+    .nav-item {
+        position: relative;
+        padding: 2.5rem 1rem;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 90%;
+            position: absolute;
+            top: -90%;
+            left: 0;
+            background-color: $color-hover;
+            @include transition(top);
+        }
+
+        &:hover~.dropdown-menu {
+            opacity: 1;
+        }
+
+        &:hover:last-child .nav-link {
+            color: $color-body !important;
+        }
+
+        &:hover::before {
+            top: 0;
+        }
+
+        &:last-child {
+
+            .nav-link {
+                color: #c3e235;
+            }
+
+            &::before {
+                background-color: #c3e235;
+            }
+        }
+    }
+
+    .nav-link {
+        font-family: $fm-secondary;
+        font-size: 1.6rem;
+        font-weight: 800;
+        position: relative;
+        z-index: 9;
+        padding: 2.5rem 2rem;
+        color: white;
+        height: 100%;
+        @include transition(color);
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    background-color: $color-Dark-high;
+    @include transition(opacity);
+
+    .dropdown-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 5rem 3rem;
+    }
+
+    .women-links {
+        font-family: $fm-secondary;
+        font-size: 1.6rem;
+        padding: 0 1rem;
+        color: white;
+        @include transition(background-color);
+
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+
+    .women-lists:last-child {
+        margin-top: 3rem;
+    }
+
+    .women-subcat {
+
+        li {
+            padding: 0.6rem 2rem;
+        }
+    }
+
+    .list-head h6 {
+        font-family: $fm-secondary;
+        font-size: 1.6rem;
+        padding: 0 2rem;
+        margin-bottom: 1.6rem;
+        color: white;
+        @include transition(background-color);
+
+        &:hover {
+            background-color: $color-hover;
+        }
+    }
+
+    .sub-links {
+        font-size: 1.6rem;
+        color: $color-accent;
+        padding: 0.4rem;
+        @include transition(background-color);
+        @include transition(color);
+
+        &:hover {
+            background-color: $color-hover;
+            color: white;
+        }
+    }
+
+    .col:first-child {
+        flex-basis: 25%;
+
+        h6 {
+            font-size: 1.6rem;
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.2rem;
+            color: $color-primary;
+        }
+
+        span {
+            font-family: $fm-secondary;
+            font-size: 6.5rem;
+            line-height: 1.2;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1.22rem;
+
+            :nth-child(1) {
+                color: $color-primary !important;
+            }
+        }
+    }
+
+    .col:nth-child(2) {
+        flex-basis: 25%;
+
+        li {
+            padding: 0.6rem 1.5rem;
+
+            &:first-child a {
+                color: $color-primary;
+            }
+
+            &:last-child {
+                margin-top: 2.8rem;
+            }
+        }
+    }
+
+    .col:nth-child(3) {
+        flex-basis: 20%;
+    }
+
+    .col:nth-child(4) {
+        flex-basis: 20%;
+    }
+
+    .col:last-child {
+        flex-basis: 20%;
+    }
+}
+
+.nav-account {
+    flex-basis: 22%;
+    display: flex;
+    align-items: center;
+
+    svg {
+        font-size: 1.6rem;
+        color: white;
+    }
+
+    .nav-icon {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            color: white;
+            padding: 2.85rem 2rem;
+
+            &:hover {
+                background-color: $color-hover;
+            }
+        }
+    }
+
+    .nav-bag {
+        @extend .flexRow-center;
+        width: 100%;
+        cursor: pointer;
+        padding: 2.5rem 0;
+        background-color: $color-hover;
+        @include transition(background);
+
+        span {
+            font-family: $fm-secondary;
+            padding: 0 0.3rem;
+            font-size: 1.6rem;
+            color: white;
+        }
+
+        &:hover {
+            background-color: $color-Dark-high;
+        }
+    }
+}

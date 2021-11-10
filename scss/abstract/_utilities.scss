@@ -1,0 +1,39 @@
+.container {
+    width: 90%;
+    height: 100%;
+    // max-width: $width-container;
+    margin: 0 auto;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.transform {
+    transform: translateX(-100%);
+}
+
+section {
+    padding: $section-padding 0;
+}
+
+.btn {
+    border-radius: 2.5rem;
+    padding: 2.2rem 4rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-carousel {
+    display: inline-block;
+    background-color: white;
+    color: grey;
+    border: 1px solid white;
+    margin-top: 3rem;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: transparent;
+        color: white;
+    }
+}
